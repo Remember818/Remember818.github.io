@@ -120,33 +120,33 @@
 <h3 id="Architecture"><a href="#Architecture" class="headerlink" title="Architecture"></a>Architecture</h3><p><strong>A. SVM</strong></p>
 <p>SVM is a simple linear classifier. It learns to classify new data by training on known data and develop a hyperplane. In order to optimize this hyperplane and simplify the process, we need to tune hour parameters: kernel, regularizer, gamma, and margin. </p>
 <p>The diagrams below illustrate what kernel is. It is a process of computing a complex, high-dimensional problem in a simple way, like converting sentence into vector. For instance, using bag-of words method, we can express a sentence in a series of numbers.</p>
-<p><img src="/2019/11/13/Project-Summary/1.png" alt="1"><br><img src="/2019/11/13/Project-Summary/2.png" alt="1"></p>
+<p><img src="/2019/11/13/Project-Summary/1.png" alt><br><img src="/2019/11/13/Project-Summary/2.png" alt></p>
 <p>(Text to points)</p>
 <p>After converting complex data into simple form, we need to teach the program a hyperplane. We need to consider how conforming the hyperplane is with the data. With regularizer, we can achieve this. The left diagram shows a hyperplane with low regularization value while the right diagram shows a hyperplane with higher regularization. The regularization value determines how fitting the hyperplane is. </p>
-<p><img src="/2019/11/13/Project-Summary/3.png" alt="1"><br><img src="/2019/11/13/Project-Summary/4.png" alt="1"></p>
+<p><img src="/2019/11/13/Project-Summary/3.png" alt><br><img src="/2019/11/13/Project-Summary/4.png" alt></p>
 <p>(Low regularization value &amp; High regularization value)</p>
 <p>Gamma is another value we need to control. It determines which of the data or points the model will consider and how the hyperplane will be influenced. Low gamma will make the model consider far away points whilst high gamma will make the model consider nearby points only.</p>
-<p><img src="/2019/11/13/Project-Summary/5.png" alt="1"><br><img src="/2019/11/13/Project-Summary/6.png" alt="1"></p>
+<p><img src="/2019/11/13/Project-Summary/5.png" alt><br><img src="/2019/11/13/Project-Summary/6.png" alt></p>
 <p>(Low gamma &amp; High gamma)</p>
 <p>Finally, the model need to have a good margin. A good margin indicates that the hyperplane locates at the middle between two classes and will not incline to any class, while a bad margin means that the hyperplane incline to one of the classes, resulting in inaccuracy in testing or practical use.</p>
-<p><img src="/2019/11/13/Project-Summary/7.png" alt="1"><br><img src="/2019/11/13/Project-Summary/8.png" alt="1"></p>
+<p><img src="/2019/11/13/Project-Summary/7.png" alt><br><img src="/2019/11/13/Project-Summary/8.png" alt></p>
 <p>(Good margin &amp; Bad margin)</p>
 <p><strong>B. Neural Network</strong></p>
-<p><img src="/2019/11/13/Project-Summary/9.png" alt="1"></p>
+<p><img src="/2019/11/13/Project-Summary/9.png" alt></p>
 <p>Deep learning, or neural network, is a branch of machine learning. Similarly, its aim is to learn a particular process and develop the most suitable model for the process. In addition, neural network tries to simulate the mechanism of human brain. Different functions are recognized as different neurons. There are several important compositions of neural network.</p>
 <p>First, the input layer is where we feed in the data. It will then pass the data as outputs to the next layer, after computing with in-built function. The next layer receives the outputs from previous layer as its inputs and keep computing it. This process repeats over and over again, and the information is transferred in the network. Finally, it will come out as a desired output.</p>
 <p>During the transfer of information, except the functions in each neuron, the weights will also affect the inputs. It indicates the importance of the inputs; it is the coefficients of the functions. During the training, the weights are constantly optimized. In another word, the purpose of training is to find a optimal weights for the model to make right judgement.</p>
 <p>In each layer, there is a independent constant called bias. It is an addition to the result of the function. By its value, the results are shifted. Also, it ensures that the network can still work even when the input is zero. It is like the the y-intercept of slope-intercept form, which is constant and ensure that y has a value even if the x is equal to zero.</p>
 <p><strong>C. LSTM</strong></p>
-<p><img src="/2019/11/13/Project-Summary/10.png" alt="1"></p>
+<p><img src="/2019/11/13/Project-Summary/10.png" alt></p>
 <p>(Conventional RNN)</p>
 <p>LSTM is a branch of RNN. The diagram above demonstrate what a conventional RNN looks like. Comparing with feedforward network, the RNN not only produce an output, but also recurrent the output in its network, creating a kind of memory. Thus, it is widely used to deal with sequence of information such as picture, handwriting, etc. However, there is problem. RNN cannot correct the error in the output immediately and the error will also be sent back into the loop. As a result, the error will be multiplied, ultimately resulting in extreme output. This is vanishing gradients problem.</p>
-<p><img src="/2019/11/13/Project-Summary/11.png" alt="1"></p>
+<p><img src="/2019/11/13/Project-Summary/11.png" alt></p>
 <p>To solve this problem, LSTM is developed. Comparing with traditional RNN, LSTM is added with three more independent gates, which can control the recurrent flow like a door, called input gate, forget gate, and output gate. The diagram above illustrate how they work. The input gate decides whether to take new input or circulate the old output; the forget gate determine whether erase or keep the information in the circulation; the output gate judge whether produce an output or send it back into the loop. The gates work together,  block or pass input, and maintain a constant error, in order to avoid vanishing gradient problem.</p>
 <h3 id="Dataset"><a href="#Dataset" class="headerlink" title="Dataset"></a>Dataset</h3><p>From Figure Eight, I obtained two data sets. One was about the sentiments towards the weather of Twitter users, and the other one was about the sentiments towards various airlines. I first tokenized the texts, and then filtered all neutral sentiments of both data sets. </p>
 <p>Overall, the “Weather” data set included less data. Excluded the neutral sentiments, about 1000 texts are within. The “Airline” data set included more data. Considering only the positive and negative sentiments, around 11000 texts are within.</p>
 <p>I lastly divided both data set into training set and testing set at a ratio of 7 to 3.</p>
-<p><img src="/2019/11/13/Project-Summary/12.png" alt="1"></p>
+<p><img src="/2019/11/13/Project-Summary/12.png" alt></p>
 <p>Experimental Setup and Results</p>
 <p><strong>A. Model Setting</strong><br>As it was impossible to compare the effectiveness of all the models in history, I planed to compare the efficiency of traditional and up-to-date methods of classification: SVM classifier and LSTM neural network. In addition, other factors affecting the accuracy of the performance, such as data size, activation, number of layers, will be tuned, in order to find the optimum setting for the performance of the classifier with different data size.</p>
 <p>Overall, the neural network was composed of one input layer, one embedding layer, one LSTM layer, two dense layers, two activation layers and one dropout layer.</p>
@@ -158,7 +158,7 @@
 <p>After tuning, with the best setting for the neural network, the accuracy of LSTM reached 89% in testing. However, in the “Airline” data set, as the amount of negative comment was significantly greater than that of positive comments, the accuracy for judging positive comment was only 75% whilst the accuracy for judging negative comments was 94%.</p>
 <p>For SVM, it was obvious that its performance was worse than that of LSTM. With rbf kernel, the accuracy in classifying “Airline” data set was 80%, while the accuracy in classifying “Weather” data set was only 50%. Similarly, with linear kernel, the accuracy for classifying both data sets were almost the same. Nevertheless, the computing times under linear kernel were much higher than other models or kernels. In training with “Airline” data set, the training time was more than 2 hours, whereas in training with “Weather” data set, a smaller data set, the training time reached 18 minutes.</p>
 <p>Therefore, it can be seen that LSTM performed better than traditional classifier, as it computed faster with higher accuracy.</p>
-<p><img src="/2019/11/13/Project-Summary/13.png" alt="1"></p>
+<p><img src="/2019/11/13/Project-Summary/13.png" alt="hfshnssshshsh"></p>
 <h3 id="Conclusion"><a href="#Conclusion" class="headerlink" title="Conclusion"></a>Conclusion</h3><p>In this report, I examined and compared the performances of new and old classifiers, based on data set about Twitter users. I found a better way of tuning the neural network and achieved a better result. It was obvious that advanced LSTM performed better and more efficiently than SVM linear classifier. </p>
 <p>This definitely showed the trend towards solving data problem with neural network and machine learning.</p>
 
@@ -186,12 +186,10 @@
                     <span>Develop for fun</span>
                     <dl>
                         <dd><a href="https://github.com/Remember818/Remember818.github.io" target="_blank"><span class=" iconfont icon-github"></span></a></dd>
-                        <dd><a href="" target="_blank"><span class=" iconfont icon-twitter"></span></a></dd>
-                        <dd><a href="" target="_blank"><span class=" iconfont icon-stack-overflow"></span></a></dd>
                     </dl>
                 </div>
                 <ul>
-                    <li><a href="/">1 <p>Articles</p></a></li>
+                    <li><a href="/">3 <p>Articles</p></a></li>
                     <li><a href="/categories">0 <p>Categories</p></a></li>
                     <li><a href="/tags">0 <p>Tags</p></a></li>
                 </ul>

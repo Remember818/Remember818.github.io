@@ -1,0 +1,393 @@
+
+<!DOCTYPE html>
+<html lang="en" class="loading">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Coding-Demonstration - Kevin&#39;s blog</title>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate" />
+    <meta name="keywords" content="TriDiamond Obsidian,"> 
+    <meta name="description" content="1234567891011121314151617181920212223242526272829303132import numpy as np # linear algebraimport pa,"> 
+    <meta name="author" content="Kevin"> 
+    
+    <link rel="icon" href="/img/favicon.png"> 
+    <link href="https://fonts.loli.net/css?family=Roboto+Mono|Rubik&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="//at.alicdn.com/t/font_1429596_nzgqgvnmkjb.css">
+    <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.7.2/animate.min.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/css/share.min.css">
+    <link rel="stylesheet" href="//cdn.bootcss.com/codemirror/5.48.4/codemirror.min.css">
+    <link rel="stylesheet" href="//cdn.bootcss.com/codemirror/5.48.4/theme/dracula.css">
+    <link rel="stylesheet" href="/css/obsidian.css">
+    <link rel="stylesheet" href="/css/ball-atom.min.css">
+</head>
+
+<body class="loading">
+    <div class="loader">
+        <div class="la-ball-atom la-2x">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+    <span id="config-title" style="display:none">Kevin&#39;s blog</span>
+    <div id="loader"></div>
+    <div id="single">
+    <div class="scrollbar gradient-bg-rev"></div>
+<div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <div class="navigation animated fadeIn fast delay-1s">
+        <img id="home-icon" class="icon-home" src="/img/favicon.png" alt="" data-url="http://yoursite.com">
+        <div id="play-icon" title="Play/Pause" class="iconfont icon-play"></div>
+        <h3 class="subtitle">Coding-Demonstration</h3>
+        <div class="social">
+            <!--        <div class="like-icon">-->
+            <!--            <a href="javascript:;" target="_blank" rel="noopener" class="likeThis active"><span class="icon-like"></span><span class="count">76</span></a>-->
+            <!--        </div>-->
+            <div>
+                <div class="share">
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <div class="section">
+        <div class= article-header-wrapper>
+    <div class="article-header">
+        <div class="article-cover animated fadeIn" style="
+            animation-delay: 600ms;
+            animation-duration: 1.2s;
+            background-image: 
+                radial-gradient(ellipse closest-side, rgba(0, 0, 0, 0.65), #100e17),
+                url(/img/cover.jpg);">
+        </div>
+        <div class="else">
+            <p class="animated fadeInDown">
+                
+                    <a href="javascript:;" target="_blank" rel="noopener"><b>「 </b>Article<b> 」</b></a>
+                
+                November 12, 2019
+            </p>
+            <h3 class="post-title animated fadeInDown"><a href="/2019/11/12/Coding-Demonstration/" title="Coding-Demonstration" class="">Coding-Demonstration</a></h3>
+            
+                <p class="post-count animated fadeInDown">
+                    
+                        <span>
+                        <b class="iconfont icon-text2"></b> <i>Words count</i>
+                        18k
+                    </span>
+                    
+                    
+                        <span>
+                        <b class="iconfont icon-timer__s"></b> <i>Reading time</i>
+                        16 mins.
+                    </span>
+                    
+                    
+                    
+                </p>
+            
+            
+        </div>
+    </div>
+</div>
+
+<div class="screen-gradient-after">
+    <div class="screen-gradient-content">
+        <div class="screen-gradient-content-inside">
+            <div class="bold-underline-links screen-gradient-sponsor">
+                <p>
+                    <span class="animated fadeIn delay-1s"></span>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="article">
+    <div class='main'>
+        <div class="content markdown animated fadeIn slower">
+            <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np <span class="comment"># linear algebra</span></span><br><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd <span class="comment"># data processing, CSV file I/O (e.g. pd.read_csv)</span></span><br><span class="line"><span class="keyword">from</span> keras.layers <span class="keyword">import</span> ConvLSTM2D, LSTM, Activation, Dense, Dropout, Input, Embedding</span><br><span class="line"><span class="keyword">from</span> keras.models <span class="keyword">import</span> Model</span><br><span class="line"><span class="keyword">from</span> sklearn.feature_extraction.text <span class="keyword">import</span> CountVectorizer</span><br><span class="line"><span class="keyword">from</span> keras.preprocessing.text <span class="keyword">import</span> Tokenizer</span><br><span class="line"><span class="keyword">from</span> keras.preprocessing.sequence <span class="keyword">import</span> pad_sequences</span><br><span class="line"><span class="keyword">from</span> keras.models <span class="keyword">import</span> Sequential</span><br><span class="line"><span class="keyword">from</span> keras.layers <span class="keyword">import</span> Dense, Embedding, LSTM, SpatialDropout1D</span><br><span class="line"><span class="keyword">from</span> sklearn.model_selection <span class="keyword">import</span> train_test_split</span><br><span class="line"><span class="keyword">from</span> keras.utils.np_utils <span class="keyword">import</span> to_categorical</span><br><span class="line"><span class="keyword">import</span> re</span><br><span class="line"></span><br><span class="line">data = pd.read_csv(<span class="string">'./data/Airline.csv'</span>)</span><br><span class="line">data = data[[<span class="string">'text'</span>,<span class="string">'airline_sentiment'</span>]]</span><br><span class="line"></span><br><span class="line">data[<span class="string">'text'</span>] = data[<span class="string">'text'</span>].apply(<span class="keyword">lambda</span> x: x.lower())</span><br><span class="line">data[<span class="string">'text'</span>] = data[<span class="string">'text'</span>].apply((<span class="keyword">lambda</span> x: re.sub(<span class="string">'[^a-zA-Z0-9\s]'</span>,<span class="string">''</span>,x)))</span><br><span class="line"></span><br><span class="line">data = data[data.airline_sentiment != <span class="string">"neutral"</span>]</span><br><span class="line">print(data[ data[<span class="string">'airline_sentiment'</span>] == <span class="string">'positive'</span>].size)</span><br><span class="line">print(data[ data[<span class="string">'airline_sentiment'</span>] == <span class="string">'negative'</span>].size)</span><br><span class="line"><span class="keyword">for</span> idx,row <span class="keyword">in</span> data.iterrows():</span><br><span class="line">    row[<span class="number">0</span>] = row[<span class="number">0</span>].replace(<span class="string">'rt'</span>,<span class="string">' '</span>)</span><br><span class="line">    </span><br><span class="line">max_fatures = <span class="number">1000</span></span><br><span class="line">tokenizer = Tokenizer(num_words=max_fatures, split=<span class="string">' '</span>)</span><br><span class="line">tokenizer.fit_on_texts(data[<span class="string">'text'</span>].values)</span><br><span class="line">X = tokenizer.texts_to_sequences(data[<span class="string">'text'</span>].values)</span><br><span class="line">X = pad_sequences(X)</span><br><span class="line">print(data.iloc[<span class="number">1</span>,<span class="number">0</span>])</span><br><span class="line">X[<span class="number">0</span>]</span><br></pre></td></tr></table></figure>
+
+<pre><code>Using TensorFlow backend.
+
+
+4668
+18164
+united yes we waited in line for almost an hour to do so some passengers just left not wanting to wait past 1am
+
+
+
+
+
+array([  0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,
+         0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,  18,
+        14, 120, 158,  10,  11,  24], dtype=int32)</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Y = pd.get_dummies(data[<span class="string">'airline_sentiment'</span>]).values</span><br><span class="line">X_train, X_test, Y_train, Y_test = train_test_split(X,Y, test_size = <span class="number">0.2</span>, random_state = <span class="number">42</span>)</span><br><span class="line">print(X_train.shape,Y_train.shape)</span><br><span class="line">print(X_test.shape,Y_test.shape)</span><br></pre></td></tr></table></figure>
+
+<pre><code>(9132, 32) (9132, 2)
+(2284, 32) (2284, 2)</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">max_len = X.shape[<span class="number">1</span>]</span><br><span class="line">print(max_len)</span><br></pre></td></tr></table></figure>
+
+<pre><code>32</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">RNN</span><span class="params">()</span>:</span></span><br><span class="line">    inputs = Input(name=<span class="string">'inputs'</span>,shape=[max_len])</span><br><span class="line">    layer = Embedding(max_fatures,<span class="number">1000</span>,input_length=X.shape[<span class="number">1</span>])(inputs)</span><br><span class="line">    layer = LSTM(<span class="number">32</span>)(layer)</span><br><span class="line">    layer = Dense(<span class="number">128</span>,name=<span class="string">'FC1'</span>)(layer)</span><br><span class="line">    layer = Activation(<span class="string">'relu'</span>)(layer)</span><br><span class="line">    layer = Dropout(<span class="number">0.5</span>)(layer)</span><br><span class="line">    layer = Dense(<span class="number">2</span>,name=<span class="string">'out_layer'</span>)(layer)</span><br><span class="line">    layer = Activation(<span class="string">'sigmoid'</span>)(layer)</span><br><span class="line">    model = Model(inputs=inputs,outputs=layer)</span><br><span class="line">    <span class="keyword">return</span> model</span><br></pre></td></tr></table></figure>
+
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">model = RNN()</span><br></pre></td></tr></table></figure>
+
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">model.summary()</span><br></pre></td></tr></table></figure>
+
+<pre><code>_________________________________________________________________
+Layer (type)                 Output Shape              Param #   
+=================================================================
+inputs (InputLayer)          (None, 32)                0         
+_________________________________________________________________
+embedding_1 (Embedding)      (None, 32, 1000)          1000000   
+_________________________________________________________________
+lstm_1 (LSTM)                (None, 32)                132224    
+_________________________________________________________________
+FC1 (Dense)                  (None, 128)               4224      
+_________________________________________________________________
+activation_1 (Activation)    (None, 128)               0         
+_________________________________________________________________
+dropout_1 (Dropout)          (None, 128)               0         
+_________________________________________________________________
+out_layer (Dense)            (None, 2)                 258       
+_________________________________________________________________
+activation_2 (Activation)    (None, 2)                 0         
+=================================================================
+Total params: 1,136,706
+Trainable params: 1,136,706
+Non-trainable params: 0
+_________________________________________________________________</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> keras.optimizers <span class="keyword">import</span> RMSprop</span><br><span class="line"></span><br><span class="line">model.compile(loss=<span class="string">'binary_crossentropy'</span>,optimizer=RMSprop(),metrics=[<span class="string">'accuracy'</span>])</span><br></pre></td></tr></table></figure>
+
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">batch_size = <span class="number">32</span></span><br><span class="line">model.fit(X_train, Y_train, epochs = <span class="number">10</span>, batch_size=batch_size, verbose = <span class="number">1</span>)</span><br></pre></td></tr></table></figure>
+
+<pre><code>Epoch 1/10
+9132/9132 [==============================] - 30s 3ms/step - loss: 0.2898 - acc: 0.8843
+Epoch 2/10
+9132/9132 [==============================] - 28s 3ms/step - loss: 0.1985 - acc: 0.9206
+Epoch 3/10
+9132/9132 [==============================] - 28s 3ms/step - loss: 0.1740 - acc: 0.9335
+Epoch 4/10
+9132/9132 [==============================] - 28s 3ms/step - loss: 0.1553 - acc: 0.9388
+Epoch 5/10
+9132/9132 [==============================] - 28s 3ms/step - loss: 0.1372 - acc: 0.9451
+Epoch 6/10
+9132/9132 [==============================] - 29s 3ms/step - loss: 0.1198 - acc: 0.9535: 5s - - ETA:
+Epoch 7/10
+9132/9132 [==============================] - 28s 3ms/step - loss: 0.1021 - acc: 0.9596: 2s 
+Epoch 8/10
+9132/9132 [==============================] - 28s 3ms/step - loss: 0.0895 - acc: 0.9669
+Epoch 9/10
+9132/9132 [==============================] - 28s 3ms/step - loss: 0.0739 - acc: 0.9724
+Epoch 10/10
+9132/9132 [==============================] - 27s 3ms/step - loss: 0.0613 - acc: 0.9795
+
+
+
+
+
+&lt;keras.callbacks.History at 0x7f6f73f7ffd0&gt;</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">validation_size = <span class="number">1500</span></span><br><span class="line"></span><br><span class="line">X_validate = X_test[-validation_size:]</span><br><span class="line">Y_validate = Y_test[-validation_size:]</span><br><span class="line">X_test = X_test[:-validation_size]</span><br><span class="line">Y_test = Y_test[:-validation_size]</span><br><span class="line">score,acc = model.evaluate(X_test, Y_test, verbose = <span class="number">2</span>, batch_size = batch_size)</span><br><span class="line">print(<span class="string">"score: %.2f"</span> % (score))</span><br><span class="line">print(<span class="string">"acc: %.2f"</span> % (acc))</span><br></pre></td></tr></table></figure>
+
+<pre><code>score: 0.38
+acc: 0.92</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">pos_cnt, neg_cnt, pos_correct, neg_correct = <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span></span><br><span class="line"><span class="keyword">for</span> x <span class="keyword">in</span> range(len(X_validate)):</span><br><span class="line">    </span><br><span class="line">    result = model.predict(X_validate[x].reshape(<span class="number">1</span>,X_test.shape[<span class="number">1</span>]),batch_size=<span class="number">1</span>,verbose = <span class="number">2</span>)[<span class="number">0</span>]</span><br><span class="line">   </span><br><span class="line">    <span class="keyword">if</span> np.argmax(result) == np.argmax(Y_validate[x]):</span><br><span class="line">        <span class="keyword">if</span> np.argmax(Y_validate[x]) == <span class="number">0</span>:</span><br><span class="line">            neg_correct += <span class="number">1</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            pos_correct += <span class="number">1</span></span><br><span class="line">       </span><br><span class="line">    <span class="keyword">if</span> np.argmax(Y_validate[x]) == <span class="number">0</span>:</span><br><span class="line">        neg_cnt += <span class="number">1</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        pos_cnt += <span class="number">1</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">print(<span class="string">"pos_acc"</span>, pos_correct/pos_cnt*<span class="number">100</span>, <span class="string">"%"</span>)</span><br><span class="line">print(<span class="string">"neg_acc"</span>, neg_correct/neg_cnt*<span class="number">100</span>, <span class="string">"%"</span>)</span><br></pre></td></tr></table></figure>
+
+<pre><code>pos_acc 74.5928338762215 %
+neg_acc 95.89270746018441 %</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">twt = [input(<span class="string">''</span>)]</span><br><span class="line"><span class="comment">#vectorizing the tweet by the pre-fitted tokenizer instance</span></span><br><span class="line">twt = tokenizer.texts_to_sequences(twt)</span><br><span class="line"><span class="comment">#padding the tweet to have exactly the same shape as `embedding_2` input</span></span><br><span class="line">twt = pad_sequences(twt, maxlen=X.shape[<span class="number">1</span>], dtype=<span class="string">'int32'</span>, value=<span class="number">0</span>)</span><br><span class="line">print(twt)</span><br><span class="line">sentiment = model.predict(twt,batch_size=<span class="number">1</span>,verbose = <span class="number">2</span>)[<span class="number">0</span>]</span><br><span class="line"><span class="keyword">if</span>(np.argmax(sentiment) == <span class="number">0</span>):</span><br><span class="line">    print(<span class="string">"negative"</span>)</span><br><span class="line"><span class="keyword">elif</span> (np.argmax(sentiment) == <span class="number">1</span>):</span><br><span class="line">    print(<span class="string">"positive"</span>)</span><br></pre></td></tr></table></figure>
+
+<pre><code>you are terrible
+[[  0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+    0   0   0   0   0   0   0   0   0   0   0   6  37 304]]
+negative</code></pre>
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
+                <source type="audio/mpeg" src="">
+            </audio>
+            
+                <ul id="audio-list" style="display:none">
+                    
+                        
+                            <li title='0' data-url='/statics/chengdu.mp3'></li>
+                        
+                    
+                </ul>
+            
+            
+            
+        </div>
+        <div class="sidebar">
+            <div class="box animated fadeInRight">
+                <div class="subbox">
+                    <img src="https://res.cloudinary.com/tridiamond/image/upload/v1573019751/TriDiamond_logo_ui_xeublz.jpg" height=300 width=300></img>
+                    <p>Kevin</p>
+                    <span>Develop for fun</span>
+                    <dl>
+                        <dd><a href="https://github.com/Remember818/Remember818.github.io" target="_blank"><span class=" iconfont icon-github"></span></a></dd>
+                    </dl>
+                </div>
+                <ul>
+                    <li><a href="/">3 <p>Articles</p></a></li>
+                    <li><a href="/categories">0 <p>Categories</p></a></li>
+                    <li><a href="/tags">0 <p>Tags</p></a></li>
+                </ul>
+            </div>
+            
+                
+                
+            
+        </div>
+    </div>
+</div>
+
+
+    </div>
+</div>
+    <div id="back-to-top" class="animated fadeIn faster">
+        <div class="flow"></div>
+        <span class="percentage animated fadeIn faster">0%</span>
+        <span class="iconfont icon-top02 animated fadeIn faster"></span>
+    </div>
+</body>
+<footer>
+    <p class="copyright" id="copyright">
+        &copy; 2019
+        <span class="gradient-text">
+            Kevin
+        </span>.
+        Powered by <a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a>
+        Theme
+        <span class="gradient-text">
+            <a href="https://github.com/TriDiamond/hexo-theme-obsidian" title="Obsidian" target="_blank" rel="noopener">Obsidian</a>
+        </span>
+        <small><a href="https://github.com/TriDiamond/hexo-theme-obsidian/blob/master/CHANGELOG.md" title="v1.4.2" target="_blank" rel="noopener">v1.4.2</a></small>
+    </p>
+</footer>
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/obsidian.js"></script>
+<script src="/js/jquery.truncate.js"></script>
+<script src="/js/search.js"></script>
+<script src="//cdn.bootcss.com/typed.js/2.0.10/typed.min.js"></script>
+<script src="//cdn.bootcss.com/blueimp-md5/2.12.0/js/md5.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/js/social-share.min.js"></script>
+
+<script src="https://cdn.bootcss.com/codemirror/5.48.4/codemirror.min.js"></script>
+
+    <script src="//cdn.bootcss.com/codemirror/5.48.4/mode/javascript/javascript.min.js"></script>
+
+    <script src="//cdn.bootcss.com/codemirror/5.48.4/mode/css/css.min.js"></script>
+
+    <script src="//cdn.bootcss.com/codemirror/5.48.4/mode/xml/xml.min.js"></script>
+
+    <script src="//cdn.bootcss.com/codemirror/5.48.4/mode/htmlmixed/htmlmixed.min.js"></script>
+
+    <script src="//cdn.bootcss.com/codemirror/5.48.4/mode/clike/clike.min.js"></script>
+
+    <script src="//cdn.bootcss.com/codemirror/5.48.4/mode/php/php.min.js"></script>
+
+    <script src="//cdn.bootcss.com/codemirror/5.48.4/mode/shell/shell.min.js"></script>
+
+    <script src="//cdn.bootcss.com/codemirror/5.48.4/mode/python/python.min.js"></script>
+
+
+
+
+<link rel="stylesheet" href="//cdn.bootcss.com/photoswipe/4.1.3/photoswipe.min.css">
+<link rel="stylesheet" href="//cdn.bootcss.com/photoswipe/4.1.3/default-skin/default-skin.min.css">
+<script src="//cdn.bootcss.com/photoswipe/4.1.3/photoswipe.min.js"></script>
+<script src="//cdn.bootcss.com/photoswipe/4.1.3/photoswipe-ui-default.min.js"></script>
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="//www.googletagmanager.com/gtag/js?id=UA-149874671-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-149874671-1');
+    </script>
+
+
+
+
+
+<script>
+    function initialTyped () {
+        var typedTextEl = $('.typed-text');
+        if (typedTextEl && typedTextEl.length > 0) {
+            var typed = new Typed('.typed-text', {
+                strings: ["Develop for fun", ""],
+                typeSpeed: 90,
+                loop: true,
+                loopCount: Infinity,
+                backSpeed: 20,
+            });
+        }
+    }
+
+    if ($('.article-header') && $('.article-header').length) {
+        $(document).ready(function () {
+            initialTyped();
+        });
+    }
+</script>
+
+
+
+</html>
